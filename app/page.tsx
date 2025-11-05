@@ -2,6 +2,8 @@ import Image from "next/image";
 import getData from "@/lib/getData";
 import {ArtworkTypes} from "@/types/ArtworkTypes";
 
+export const dynamic = 'force-dynamic'; // fixes issue with vercel error
+
 export default async function Home() {
     const artwork: ArtworkTypes = await getData();
 

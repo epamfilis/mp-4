@@ -15,6 +15,7 @@ export default async function getData() {
         const res = await fetch("https://api.artsearch.io/artworks/random", {
             headers: { "x-api-key": API_KEY },
             signal: controller.signal, // tells fetch that there is a timeout and it aborts
+            cache: 'no-store', // to fix an issue with vercel not pulling a new api call
         });
 
         // needs this for fetch to detect errors, otherwise it just loads blank box
